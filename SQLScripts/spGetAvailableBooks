@@ -1,0 +1,15 @@
+CREATE PROCEDURE GetAvailableBooks(@library_id as INTEGER)
+AS
+BEGIN
+    SELECT bt.Title
+    FROM BookTitle bt 
+	INNER JOIN Library_Book lb
+	ON bt.BookId = lb.BookId
+	WHERE lb.LibraryId = @library_id
+	AND lb.TotalPurchasedByLibrary > 0
+	AND lb.LibraryBookSid NOT IN
+		(SELECT bso.LibraryBookSid
+		 FROM BookSignedOut bso
+		 WHERE bso.WhenReturned = NULL
+		)    
+END;
