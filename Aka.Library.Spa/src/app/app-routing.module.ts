@@ -13,20 +13,20 @@ const routes: Routes = [
   {
     path: 'members',
     loadChildren: './members/members.module#MembersModule',
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthChildrenGuard]
+    //canActivate: [AuthGuard],
+    //canActivateChild: [AuthChildrenGuard]
   },
   {
     path: 'libraries',
     loadChildren: './library/library.module#LibraryModule',
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthChildrenGuard]
+    //canActivate: [AuthGuard],
+    //canActivateChild: [AuthChildrenGuard]
   },
   {
     path: 'checked-out',
     loadChildren: './checked-out/checked-out.module#CheckedOutModule',
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthChildrenGuard]
+    //canActivate: [AuthGuard],
+    //canActivateChild: [AuthChildrenGuard]
   },
   { path: '**', component: PageNotFoundComponent }
 ];

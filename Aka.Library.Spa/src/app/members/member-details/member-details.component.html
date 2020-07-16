@@ -49,5 +49,15 @@
         <app-member-book-list member-books="bookhistory"></app-member-book-list>
       </div>
     </mat-tab>
+    <mat-tab label="Currently Checked Out">
+      <div *ngIf="checkedout$ | async as checkedout">
+        <app-checked-out-books member-books="checkedout"></app-checked-out-books>
+      </div>
+    </mat-tab>
+    <mat-tab label="Checked Out History">
+      <div *ngIf="checkedouthistory$ | async as checkedouthistory">
+        <app-checked-out-books-history member-books="checkedouthistory"></app-checked-out-books-history>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </section>

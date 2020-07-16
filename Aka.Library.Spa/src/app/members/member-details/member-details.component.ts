@@ -8,6 +8,7 @@ import { Member } from '../interfaces/member';
 import { switchMap, tap } from 'rxjs/operators';
 import { AuthService } from '../../services/auth.service';
 import { MemberBook } from '../interfaces/member-book';
+import { SignedOutBook } from '@shared/signed-out-book';
 
 @Component({
   selector: 'app-member-details',
@@ -28,6 +29,8 @@ export class MemberDetailsComponent implements OnInit {
   member$: Observable<Member>;
   bookhistory$: Observable<MemberBook[]>;
   signedout$: Observable<MemberBook[]>;
+  checkedout$: Observable<SignedOutBook[]>;
+  checkedouthistory$: Observable<SignedOutBook[]>;
 
   constructor(
     private route: ActivatedRoute,
